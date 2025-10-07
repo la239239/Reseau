@@ -1,0 +1,24 @@
+# Environnements virtuels
+.venv/
+venv/
+
+# Fichiers temporaires Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Config IDE
+.idea/
+.vscode/
+
+# Bases de données locales
+*.db
+*.sqlite3
+
+# Logs et caches
+*.log
+*.cache
+
+# Fichiers système
+.DS_Store
+Thumbs.db
