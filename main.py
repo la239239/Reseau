@@ -103,7 +103,7 @@ class GestionnairePrincipal:
 
         # Onglet Découpe Sous-Réseaux (ton point4)
         frame_decoupe = ttk.Frame(notebook, padding="10")
-        InterfaceDecoupeSR(frame_decoupe)
+        InterfaceDecoupeSR(frame_decoupe, username)
         notebook.add(frame_decoupe, text="Découpe Sous-Réseaux")
 
         notebook.pack(expand=True, fill='both')
