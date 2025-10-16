@@ -60,6 +60,7 @@ class GestionnairePrincipal:
 
         if self.db.verify_user(username, password):
             messagebox.showinfo("Succès", "Connexion réussie!")
+            self.current_user = username  # <-- on stocke l'utilisateur connecté
             self.root.destroy()
             self.creer_interface_principale()
         else:
@@ -91,10 +92,10 @@ class GestionnairePrincipal:
 
         notebook = ttk.Notebook(main_window)
 
-        # Onglet Calcul Réseau
-        frame_calcul = ttk.Frame(notebook, padding="10")
-        InterfaceCalculReseau(frame_calcul)
-        notebook.add(frame_calcul, text="Calcul Réseau")
+        # Onglet Découpe Sous-Réseaux (ton point4)
+        frame_decoupe = ttk.Frame(notebook, padding="10")
+        InterfaceDecoupeSR(frame_decoupe, self.current_user)  # <-- on utilise self.current_user
+        notebook.add(frame_decoupe, text="Découpe Sous-Réseaux")
 
         # Onglet Vérification IP
         frame_verification = ttk.Frame(notebook, padding="10")
